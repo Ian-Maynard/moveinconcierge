@@ -12,12 +12,9 @@
 <body>
 <header>
 	<h1>Move-In Concerige</h1>
-	<h2>What's important to you</h2>
+	<h2> Let's Get You Started!</h2>
 </header>
 <form>
-	<input type="text" placeholder="Name" id="name">
-	<input type="text" placeholder="Location" id="waypoint">
-	<input type="text" placeholder="Radius" id="radius">
 <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click to Start</button>
 </form>
 <div class="container">
@@ -33,8 +30,9 @@
 						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
 						<span class="caret"></span></button>
 						<ul class="dropdown-menu">
-							<li class="house">House</li>
-							<li class="apartment">Apartment</li>
+							<li class="work">Work</li>
+              <li class="school">School</li>
+              <li class="family">Family</li>
 						</ul>
 					</div>
 				</div>
@@ -56,6 +54,9 @@ var reason = $(this).attr("class")
 console.log(reason);
 
 })
+
+
+
 </script>
 </body>
 </html>

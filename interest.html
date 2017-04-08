@@ -12,12 +12,9 @@
 <body>
 <header>
 	<h1>Move-In Concerige</h1>
-	<h2>What's important to you</h2>
+	<h2>Your Interest</h2>
 </header>
 <form>
-	<input type="text" placeholder="Name" id="name">
-	<input type="text" placeholder="Location" id="waypoint">
-	<input type="text" placeholder="Radius" id="radius">
 <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click to Start</button>
 </form>
 <div class="container">
@@ -26,15 +23,14 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">What brings you to this location?</h4>
+				<h4 class="modal-title">Select what interest you the most?</h4>
 			</div>
 			<div class="modal-body">
 				<div class="dropdown">
-						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="interests">Select
 						<span class="caret"></span></button>
 						<ul class="dropdown-menu">
-							<li class="house">House</li>
-							<li class="apartment">Apartment</li>
+              <li id="interestList">
 						</ul>
 					</div>
 				</div>
@@ -50,12 +46,33 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
-$("li").click(function(){
+$("#interests").click(function(){
 
-var reason = $(this).attr("class")
+
+var reason = $(this).attr("id")
 console.log(reason);
+var interests = ["Airport", "Bakery", "Bank", "Bar", "Beauty Salon", "Book Store", "Cafe", "Church", "Convenience Store", "Dentist", "Gas Station", "Gym", "Hardware Store", "Hospital", "Library", "Night Club", "Pharmacy", "Police", "Restaurant", "Shopping Mall", "Veterinary Care"]
+for (var i = 0; i < interests.length; i++) {
+var list= $("<li>")
+ var label = $("<label>")
+ label.text(interests[i])
+ var input = $("<input>")
+ input.attr("type", "checkbox")
+ input.attr("id", "cbox")
+ input.attr("name", "interests")
+ input.attr("value", interests[i])
+ label.prepend(input)
+ list.prepend(label)
+ $("#interestList").append(list)
+// console.log(interests);
+ //console.log(interests[i]);
+
+}
+
+
 
 })
+
 </script>
 </body>
 </html>
