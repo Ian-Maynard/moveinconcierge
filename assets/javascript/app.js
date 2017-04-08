@@ -1,3 +1,15 @@
+   // Initialize Firebase
+var config = {
+        apiKey: "AIzaSyCLpZgiH4nEnfoCg4dfF_U5spFvCnhdEzE",
+        authDomain: "project-one-cc2cf.firebaseapp.com",
+        databaseURL: "https://project-one-cc2cf.firebaseio.com",
+        projectId: "project-one-cc2cf",
+        storageBucket: "project-one-cc2cf.appspot.com",
+        messagingSenderId: "495954010839"
+     };
+
+var database = firebase.database();
+firebase.initializeApp(config)
 var name = ""
 var waypoint = ""
 var radius = 0
@@ -23,22 +35,26 @@ function pull(event){
   event.preventDefault()
 	var name = $("#name").val().trim()
     $("#name").val("")
-    // name variable here
+      name = snapshot.val().name;
 	var waypoint = $("#waypoint").val().trim()
     $("#waypoint").val("")
   waypoint = parseAdd(waypoint)
-    // waypoint variable here
-
   var radius = $("#radius").val().trim()
     $("#radius").val("")
     radius = Math.floor((parseInt(radius)*1609.34))
-    // radius variable here
   $.each($("input[name='interests']:checked"), function() {
   realinterests.push($(this).val())
   })
     latLong(waypoint)
     places(waypoint, radius)
-// direction()
+
+    database.ref().set({
+      name: name,
+      radius : radius, 
+      waypoint: waypoint,
+      lat: lat,
+      long: long,
+    });
 }
 
 function interestlist(){
@@ -89,16 +105,24 @@ function latLong(location){
   var orAdd   = "&origin=" + location
   var deAdd   = "&destination=3525+Rawdon+Drive+Durham+NC+27713"
   var apiKey  = "&key=AIzaSyBKnyekYJnpf78xoDtJ1SxWUdvYPuTw85U"
-  latLong = latLong+orAdd+deAdd+apiKey;  
+  latLong = latLong+orAdd+deAdd+apiKey; 
+
   $.ajax({
     url: latLong,
     method: "GET"
   }).done(function(response){
     var lat = response.routes["0"].legs["0"].end_location.lat
     var long = response.routes["0"].legs["0"].end_location.lng
-    //  lat
-    // long
+
+    database.ref().set({
+        lat: lat,
+        long: long,
+    });
+
   }); 
+
+ 
+
 }
 
 function parseAdd(x) {
