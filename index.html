@@ -20,6 +20,34 @@
 <button id="test">Test</button>
 
 </form>
-<script src="assets/javascript/app.js"></script>
+<script>
+	
+// This is the Google driving API test module - 
+var queryURL = "https://maps.googleapis.com/maps/api/distancematrix/json?";	
+var orAdd  = "origins=180 Front Street, Hellertown, PA, 18055";
+var deAdd  = "destinations=3525 Rawdon Drive, Durham, NC, 27713";
+var apiKey = "key=AIzaSyBKnyekYJnpf78xoDtJ1SxWUdvYPuTw85U";
+        
+// Assemble Query 
+
+ $.ajax({
+       url: queryURL+orAdd+deAdd+apiKey,
+       method: "GET"
+        }).done(function(response)
+
+$(document).ready(function() {
+ {
+ 	$.ajax({
+       url: queryURL+orAdd+deAdd+apiKey,
+       method: "GET"
+        }).done(function(response)
+            var outPut = response.data;    // Assign the Query response to a variable 
+            console.log(response);
+            }//  
+}); // End of the Document. ready wrapper 
+
+
+
+</script>
 </body>
 </html>
