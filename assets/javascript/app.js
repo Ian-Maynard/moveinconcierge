@@ -1,11 +1,11 @@
    // Initialize Firebase
 var config = {
-        apiKey: "AIzaSyCLpZgiH4nEnfoCg4dfF_U5spFvCnhdEzE",
-        authDomain: "project-one-cc2cf.firebaseapp.com",
-        databaseURL: "https://project-one-cc2cf.firebaseio.com",
-        projectId: "project-one-cc2cf",
-        storageBucket: "project-one-cc2cf.appspot.com",
-        messagingSenderId: "495954010839"
+        apiKey: "AIzaSyBhQ5HdRAZEoqSYEZ1BfjJgb1TgyiSH0I0",
+        authDomain: "moveinconcierge.firebaseapp.com",
+        databaseURL: "https://moveinconcierge.firebaseio.com",
+        projectId: "moveinconcierge",
+        storageBucket: "moveinconcierge.appspot.com",
+        messagingSenderId: "132973851934"
      };
 
 var database = firebase.database();
