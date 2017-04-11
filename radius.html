@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Move-In Concierge</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<header>
+	<h1>Move-In Concerige</h1>
+	<h2>How far are you willing to travel?</h2>
+</header>
+<form>
+	<input type="text" placeholder="Miles" id="radius">
+
+<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click to Start</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+//get the value for each of the inputs
+$("#radius").val("");
+
+
+
+
+var reason = $(this).attr("id")
+console.log(reason);
+
+
+</script>
+</body>
+</html>
