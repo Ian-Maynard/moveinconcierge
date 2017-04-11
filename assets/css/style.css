@@ -1,4 +1,5 @@
 *{
+
   box-sizing: border-box;
 }
 
@@ -8,22 +9,38 @@ body{
 
 }
 h1{
+
   text-align: center;
-  color: white;
-  font-size: 24px;
+  color:white;
+  margin-top: 30px
+}
+
+h2{
+  text-align: center;
+  color:white;
   margin-top: 20px;
+}
+#waypoint{
+
+}
+#radius{
 
 }
 form{
   text-align: center;
-  margin-top: 70px;
-
+  margin-top: 30px;
 
 }
-h2{
-  text-align: center;
-  color: white;
-  font-size: 18px;
-  margin-top: 150px;
-
+#startButton{
+  color: grey;
+}
+.dropdown-menu{
+  display: hidden;
+}
+h4{
+  text-align: left;
+  margin-top: 40px;
+}
+.card{
+  border: white;
 }
