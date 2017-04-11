@@ -4,50 +4,93 @@
 	<title>Move-In Concierge</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-<header> 
-	<h1>Getcha Movin'</h1>
-</header>
-<form>
-	<input type="text" placeholder="Name" id="name">
-	<input type="text" placeholder="Location" id="waypoint">
-	<input type="text" placeholder="Radius" id="radius">
-	<div id="checkbox"></div>
-<button id="submit">Submit</button>
-<button id="test">Test</button>
-
+	<header>
+		<h1>Move-In Concerige</h1>
+		<h2>What's important to you</h2>
+	</header>
+	<form>
+		<input type="text" placeholder="Name" id="name">
+		<input type="text" placeholder="Location" id="waypoint">
+		<input type="text" placeholder="Radius" id="radius">
+	<!-- <<<<<<< HEAD -->
+		<div id="checkbox"></div>
+	<button id="submit">Submit</button>
+	<button id="test">Test</button>
 </form>
 <script>
-	
-// This is the Google driving API test module - 
-var queryURL = "https://maps.googleapis.com/maps/api/distancematrix/json?";	
-var orAdd  = "origins=180 Front Street, Hellertown, PA, 18055";
-var deAdd  = "destinations=3525 Rawdon Drive, Durham, NC, 27713";
-var apiKey = "key=AIzaSyBKnyekYJnpf78xoDtJ1SxWUdvYPuTw85U";
-        
-// Assemble Query 
+		
+	// This is the Google driving API test module - 
+	var queryURL = "https://maps.googleapis.com/maps/api/distancematrix/json?";	
+	var orAdd  = "origins=180 Front Street, Hellertown, PA, 18055";
+	var deAdd  = "destinations=3525 Rawdon Drive, Durham, NC, 27713";
+	var apiKey = "key=AIzaSyBKnyekYJnpf78xoDtJ1SxWUdvYPuTw85U";
+	        
+	// Assemble Query 
 
- $.ajax({
-       url: queryURL+orAdd+deAdd+apiKey,
-       method: "GET"
-        }).done(function(response)
+	 $.ajax({
+	       url: queryURL+orAdd+deAdd+apiKey,
+	       method: "GET"
+	        }).done(function(response)
 
-$(document).ready(function() {
- {
- 	$.ajax({
-       url: queryURL+orAdd+deAdd+apiKey,
-       method: "GET"
-        }).done(function(response)
-            var outPut = response.data;    // Assign the Query response to a variable 
-            console.log(response);
-            }//  
-}); // End of the Document. ready wrapper 
-
-
-
+	$(document).ready(function() {
+	 {
+	 	$.ajax({
+	       url: queryURL+orAdd+deAdd+apiKey,
+	       method: "GET"
+	        }).done(function(response)
+	            var outPut = response.data;    // Assign the Query response to a variable 
+	            console.log(response);
+	            }//  
+	}); // End of the Document. ready wrapper
 </script>
+<!-- ======= This is apart of the merge conflict and decide if needed 
+	<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click to Start</button>
+	</form>
+	<div class="container">
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">What brings you to this location?</h4>
+				</div>
+				<div class="modal-body">
+					<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li class="house">House</li>
+								<li class="apartment">Apartment</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Another part of the merge conflict, decide if needed 
+	<script>
+	$("li").click(function(){
+
+	var reason = $(this).attr("class")
+	console.log(reason);
+
+	})
+	</script>
+	-->
 </body>
 </html>

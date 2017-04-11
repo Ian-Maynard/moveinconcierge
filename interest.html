@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Move-In Concierge</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<header>
+	<h1>Move-In Concerige</h1>
+	<h2>Your Interest</h2>
+</header>
+<form>
+<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click to Start</button>
+</form>
+<div class="container">
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Select what interest you the most?</h4>
+			</div>
+			<div class="modal-body">
+				<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="interests">Select
+						<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+              <li id="interestList">
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$("#interests").click(function(){
+
+
+var reason = $(this).attr("id")
+console.log(reason);
+var interests = ["Airport", "Bakery", "Bank", "Bar", "Beauty Salon", "Book Store", "Cafe", "Church", "Convenience Store", "Dentist", "Gas Station", "Gym", "Hardware Store", "Hospital", "Library", "Night Club", "Pharmacy", "Police", "Restaurant", "Shopping Mall", "Veterinary Care"]
+for (var i = 0; i < interests.length; i++) {
+var list= $("<li>")
+ var label = $("<label>")
+ label.text(interests[i])
+ var input = $("<input>")
+ input.attr("type", "checkbox")
+ input.attr("id", "cbox")
+ input.attr("name", "interests")
+ input.attr("value", interests[i])
+ label.prepend(input)
+ list.prepend(label)
+ $("#interestList").append(list)
+// console.log(interests);
+ //console.log(interests[i]);
+
+}
+
+
+
+})
+
+</script>
+</body>
+</html>
